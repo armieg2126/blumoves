@@ -47,6 +47,8 @@ export default function Home() {
       {/* HERO */}
       <header className="hero" id="top">
         <div className="hero-grid" />
+        <div className="hero-inner">
+        <div className="hero-left">
         <span className="hero-tag"><span className="dot" /> Serving Northern NJ &amp; Morris County</span>
         <h1>
           Moving day,<br />
@@ -62,6 +64,7 @@ export default function Home() {
             📞 Call {PHONE}
           </a>
           <a href="#how" className="btn-ghost">See how it works →</a>
+        </div>
         </div>
 
         <div className="quote-card">
@@ -105,6 +108,7 @@ export default function Home() {
               </a>
             </>
           )}
+        </div>
         </div>
       </header>
 
