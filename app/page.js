@@ -1,10 +1,24 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const PHONE = "973-216-0926";
 const PHONE_TEL = "9732160926";
 
 export default function Home() {
+  const [quote, setQuote] = useState({ from: "", to: "", phone: "" });
+  const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState("");
+
+  const handleQuoteSubmit = () => {
+    if (!quote.from.trim() || !quote.to.trim() || !quote.phone.trim()) {
+      setError("Please fill in all three fields.");
+      return;
+    }
+    setError("");
+    // TODO: send to /api/quote (wire up real email delivery here later)
+    setSubmitted(true);
+  };
+
   useEffect(() => {
     const els = document.querySelectorAll(".reveal");
     const io = new IntersectionObserver(
@@ -48,6 +62,49 @@ export default function Home() {
             📞 Call {PHONE}
           </a>
           <a href="#how" className="btn-ghost">See how it works →</a>
+        </div>
+
+        <div className="quote-card">
+          {submitted ? (
+            <div className="quote-success">
+              <span className="quote-success-ic">✓</span>
+              <p>Thanks! We got it — we&apos;ll call you shortly with your quote.</p>
+            </div>
+          ) : (
+            <>
+              <h2 className="quote-head">Get your free quote in minutes.</h2>
+              <div className="quote-fields">
+                <input
+                  className="quote-input"
+                  type="text"
+                  placeholder="Moving from (ZIP or town)"
+                  value={quote.from}
+                  onChange={(e) => setQuote({ ...quote, from: e.target.value })}
+                />
+                <input
+                  className="quote-input"
+                  type="text"
+                  placeholder="Moving to (ZIP or town)"
+                  value={quote.to}
+                  onChange={(e) => setQuote({ ...quote, to: e.target.value })}
+                />
+                <input
+                  className="quote-input"
+                  type="tel"
+                  placeholder="Your phone number"
+                  value={quote.phone}
+                  onChange={(e) => setQuote({ ...quote, phone: e.target.value })}
+                />
+              </div>
+              {error && <p className="quote-error">{error}</p>}
+              <button type="button" className="quote-btn" onClick={handleQuoteSubmit}>
+                GET MY QUOTE →
+              </button>
+              <a href={`tel:${PHONE_TEL}`} className="quote-call">
+                📞 Or call {PHONE}
+              </a>
+            </>
+          )}
         </div>
       </header>
 
