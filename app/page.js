@@ -108,6 +108,45 @@ export default function Home() {
         </div>
       </section>
 
+      {/* PRICING */}
+      <section className="section pricing" id="pricing">
+        <p className="eyebrow reveal">Pricing</p>
+        <h2 className="reveal">Simple, honest pricing.</h2>
+        <p className="pricing-sub reveal">
+          No hidden fees. No surprises. You know the price before we lift a thing —
+          just a clear, upfront quote and a crew that sticks to it.
+        </p>
+
+        <div className="price-card reveal">
+          <div className="price-rate">
+            <span className="price-label">Your rate</span>
+            <span className="price-placeholder">[ Your rate here ]</span>
+          </div>
+          <div className="price-divider" />
+          <div className="price-included">
+            <span className="price-label">What&apos;s included</span>
+            <span className="price-placeholder">[ what&apos;s included ]</span>
+          </div>
+        </div>
+
+        <div className="price-trust reveal">
+          <div className="trust-item">
+            <span className="trust-check">✓</span> Upfront quote
+          </div>
+          <div className="trust-item">
+            <span className="trust-check">✓</span> No hidden fees
+          </div>
+          <div className="trust-item">
+            <span className="trust-check">✓</span> No deposit to book
+          </div>
+        </div>
+
+        <div className="pricing-cta reveal">
+          <div className="phone-line">Call for your free quote</div>
+          <a href={`tel:${PHONE_TEL}`} className="btn-primary btn-lg">📞 Call {PHONE}</a>
+        </div>
+      </section>
+
       {/* HOW IT WORKS */}
       <section className="section steps" id="how">
         <p className="eyebrow reveal">How it works</p>
@@ -192,6 +231,14 @@ export default function Home() {
           <span>Local movers · Northern NJ &amp; Morris County</span>
         </div>
       </footer>
+
+      {/* STICKY MOBILE CALL BAR */}
+      <a href={`tel:${PHONE_TEL}`} className="call-bar">
+        <span className="call-bar-icon">📞</span>
+        <span className="call-bar-text">
+          Call Now <span className="call-bar-num">{PHONE}</span>
+        </span>
+      </a>
     </>
   );
 }
