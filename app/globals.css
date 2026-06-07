@@ -103,15 +103,6 @@ a { color: inherit; text-decoration: none; }
 }
 .btn-ghost:hover { border-color: rgba(58,214,255,.6); background: rgba(58,214,255,.06); }
 
-.hero-figures {
-  position: absolute; bottom: -10px; right: clamp(-40px, 2vw, 40px);
-  width: clamp(180px, 22vw, 360px); opacity: 0; animation: fadein 1.2s .6s forwards;
-  pointer-events: none; filter: drop-shadow(0 0 50px rgba(58,214,255,.45)) drop-shadow(0 0 12px rgba(58,214,255,.35));
-}
-.hero-figures img { width: 100%; display: block; }
-/* Remove the figure entirely on mobile/tablet */
-@media (max-width: 900px) { .hero-figures { display: none; } }
-
 /* ---------- MARQUEE ---------- */
 .marquee {
   background: var(--cyan); color: var(--ink); overflow: hidden; white-space: nowrap;

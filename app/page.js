@@ -33,9 +33,6 @@ export default function Home() {
       {/* HERO */}
       <header className="hero" id="top">
         <div className="hero-grid" />
-        <div className="hero-figures">
-          <img src="/figures-clean.png" alt="" />
-        </div>
         <span className="hero-tag"><span className="dot" /> Serving Northern NJ &amp; Morris County</span>
         <h1>
           Moving day,<br />
