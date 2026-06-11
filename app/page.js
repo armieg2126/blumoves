@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import ChatWidget from "../components/ChatWidget";
 
 const PHONE = "973-216-0926";
 const PHONE_TEL = "9732160926";
@@ -297,6 +298,9 @@ export default function Home() {
           Call Now <span className="call-bar-num">{PHONE}</span>
         </span>
       </a>
+
+      {/* AI CHAT ASSISTANT */}
+      <ChatWidget />
     </>
   );
 }
